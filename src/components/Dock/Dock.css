@@ -1,0 +1,106 @@
+/* Dock.css */
+/* Copy all .icon-dock, .dock-item, and .dock-tooltip styles from original CSS */
+
+.icon-dock {
+  position: fixed;
+  bottom: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 501;
+  display: flex;
+  align-items: center;
+  gap: 18px;
+  padding: 10px 22px;
+  background: linear-gradient(90deg, rgba(26, 26, 33, 0.7) 0%, rgba(0, 163, 255, 0.15) 100%);
+  border-radius: 32px;
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.5);
+  border: 1px solid var(--border-color);
+}
+
+.dock-item {
+  width: 52px;
+  height: 52px;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: var(--surface-bg);
+  cursor: none;
+  transition: all 0.3s ease;
+  text-decoration: none;
+  border: 1px solid var(--border-color);
+  will-change: transform;
+}
+
+button.dock-item {
+  background: var(--surface-bg);
+}
+
+.dock-item.active {
+  box-shadow: 0 0 20px var(--accent-blue), 0 0 0 4px var(--surface-bg);
+  border-color: var(--accent-blue);
+}
+
+.icon-dock:hover .dock-item {
+  transform: scale(0.92);
+}
+
+.icon-dock .dock-item:hover {
+  transform: scale(1.6);
+  z-index: 3;
+}
+
+.icon-dock .dock-item:hover + .dock-item,
+.icon-dock .dock-item:has(+ .dock-item:hover) {
+  transform: scale(1.25);
+  z-index: 2;
+}
+
+.icon-dock .dock-item:hover + .dock-item + .dock-item,
+.icon-dock .dock-item:has(+ .dock-item + .dock-item:hover) {
+  transform: scale(1.10);
+  z-index: 1;
+}
+
+.dock-item svg {
+  width: 26px;
+  height: 26px;
+  fill: var(--secondary-text);
+  transition: fill 0.3s ease;
+}
+
+.dock-item:hover svg {
+  fill: var(--text-primary);
+}
+
+.about-logo-dock {
+  width: 44px;
+  height: 44px;
+  object-fit: contain;
+  display: block;
+  margin: 0 auto;
+  filter: drop-shadow(0 0 10px var(--accent-blue));
+}
+
+.dock-tooltip {
+  position: fixed;
+  transform: translate(-50%, -100%);
+  z-index: 99999;
+  background: rgba(26, 26, 33, 0.98);
+  color: var(--text-primary);
+  font-size: 0.95rem;
+  padding: 7px 16px;
+  border-radius: 6px;
+  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.18);
+  pointer-events: none;
+  opacity: 0;
+  transition: opacity 0.15s ease-out, transform 0.15s ease-out;
+  white-space: nowrap;
+}
+
+.dock-tooltip.active {
+  opacity: 1;
+  transform: translate(-50%, -110%);
+}

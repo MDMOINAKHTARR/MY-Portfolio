@@ -1,0 +1,22 @@
+.variable-proximity {
+  font-family: 'Inter var', 'Inter', Arial, sans-serif;
+  font-size: 4.8rem;
+  font-weight: bold;
+  color: #fff;
+  letter-spacing: 0.02em;
+  line-height: 1.2;
+  text-align: left;
+  user-select: none;
+}
+
+.sr-only {
+  position: absolute !important;
+  width: 1px !important;
+  height: 1px !important;
+  padding: 0 !important;
+  margin: -1px !important;
+  overflow: hidden !important;
+  clip: rect(0, 0, 0, 0) !important;
+  white-space: nowrap !important;
+  border: 0 !important;
+} 
