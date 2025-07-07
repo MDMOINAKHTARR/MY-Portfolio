@@ -45,7 +45,8 @@ This is my personal portfolio website built with **React**. It's designed to sho
 
 ## 📸 Preview
 
-![image](https://github.com/user-attachments/assets/b0fe076b-16af-402c-8032-ce02cabda0cd)
+![image]![Uploading Screenshot 2025-07-05 203344.png…]()
+
 
 ---
 
